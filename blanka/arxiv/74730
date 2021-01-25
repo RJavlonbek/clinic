@@ -1,0 +1,88 @@
+<h2 class="blank_name">TORCH -инфексия</h2>
+<p class="blank_analizator">Анализатор :  Mindray DR96</p>
+<table>
+	<tbody><tr>
+		<th>№</th>
+		<th col="name">Наиминование</th>
+		<th col="value">Результаты</th>	
+		<th>В норме</th>
+	</tr>
+	<tr>
+		<th>1</th>
+		<th>Chlamidia trahomatis IgG    (Хламидия)</th>
+		<td>2,3</td>
+		<td>До 0,35</td>
+	</tr>
+	<tr>
+		<th>2</th>
+		<th>Chlamidia trahomatis IgМ    (Хламидия)</th>
+		<td>2,5</td>
+		<td>До 0,31</td>
+	</tr>
+	<tr>
+		<th>3</th>
+		<th>Ureaplazma IgG    (Уреаплазма)</th>
+		<td></td>
+		<td>До 0,28</td>
+	</tr>
+	<tr>
+		<th>4</th>
+		<th>Ureaplazma IgM   (Уреаплазма)</th>
+		<td></td>
+		<td>До 0.35</td>
+	</tr>
+	<tr>
+		<th>5</th>
+		<th>Mycoplazma hominis IgG  (Микоплазма)</th>
+		<td></td>
+		<td>До 0.35</td>
+	</tr>
+	<tr>
+		<th>6</th>
+		<th>Cytomegalovirus IgG    (ЦМВ)</th>
+		<td></td>
+		<td>До 0.25</td>
+	</tr>
+	<tr>
+		<th>7</th>
+		<th>Cytomegalovirus IgМ     (ЦМВ)</th>
+		<td></td>
+		<td>До 046</td>
+	</tr>
+	<tr>
+		<th>8</th>
+		<th>Herpes simplex  IgG   (Вирус простого герпеса)</th>
+		<td></td>
+		<td>До 030</td>
+	</tr>
+	<tr>
+		<th>9</th>
+		<th>Herpes simplex   IgМ  (Вирус простого герпеса)</th>
+		<td></td>
+		<td>До 0.33</td>
+	</tr>
+	<tr>
+		<th>10</th>
+		<th>Toxoplazma IgG  (хрон) (Токсоплазмоз)</th>
+		<td></td>
+		<td>До 0.28</td>
+	</tr>
+	<tr>
+		<th>11</th>
+		<th>Toxoplazma IgM   (Токсоплазмоз)</th>
+		<td></td>
+		<td>До 0.22</td>
+	</tr>
+	<tr>
+		<th>12</th>
+		<th>Краснуха  IgG </th>
+		<td></td>
+		<td>До 0.35</td>
+	</tr>
+	<tr>
+		<th>13</th>
+		<th>Краснуха  IgM</th>
+		<td></td>
+		<td>До 0.35</td>
+	</tr>
+</tbody></table><span class="footer_date">Дата: <span class="value">15/12/2019</span></span><span class="footer_doctor_name">Врач-лаборант: <span class="value">test</span></span>

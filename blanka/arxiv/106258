@@ -1,0 +1,127 @@
+<h2 class="blank_name">БИОХИМИЧЕСКИЙ АНАЛИЗ КРОВИ</h2>
+<table>
+	<tbody><tr>
+		<th>№</th>
+		<th col="name">Параметры</th>
+		<th col="value">Результат</th>	
+		<th>В номе</th>
+	</tr>
+	<tr>
+		<th><width=20>1</width=20></th>
+		<td>АЛТ</td>
+		<td></td>
+		<td>М:до 42 U/L  Ж:до 32 U/L</td>
+	</tr>
+	<tr>
+		<th>2</th>
+		<td>АСТ</td>
+		<td></td>
+		<td>М:до 38 U/L  Ж:до 31 U/L</td>
+	</tr>
+	<tr>
+		<th>3</th>
+		<td>Билирубин общий</td>
+		<td></td>
+		<td>До 20,5 мкмоль/л</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>Непрямой</td>
+		<td></td>
+		<td>До До 5,1 мкмоль/л</td>
+	</tr><tr><td></td>
+		<td>Билирубин Прямой</td>
+		<td></td>
+		<td>До До 5,1 мкмоль/л</td>
+	</tr>
+	<tr>
+		<th>4</th>
+		<td>Тимоловая проба </td>
+		<td></td>
+		<td>0-4 Ед</td>
+	</tr>
+	<tr>
+		<th>5</th>
+		<td>Общий белок</td>
+		<td></td>
+		<td>65-80 г/л</td>
+	</tr>
+	<tr>
+		<th>6</th>
+		<td>Мочевина</td>
+		<td>0.56</td>
+		<td>1,7-8,3 ммоль/л</td>
+	</tr>
+	<tr>
+		<th>7</th>
+		<td>Креатинин</td>
+		<td></td>
+		<td>М:61,8-123,7 ммоль/л  Ж:53,0-97,2</td>
+	</tr>
+	<tr>
+		<th>8</th>
+		<td>Глюкоза(натощак)</td>
+		<td></td>
+		<td>3,5-6,3 ммоль/л</td>
+	</tr>
+	<tr>
+		<th>9</th>
+		<td>Тест толерантносты на глюкозы(1 этап)</td>
+		<td></td>
+		<td>4,2-7,0 ммоль/л</td>
+	</tr>
+	<tr>
+		<th>10</th>
+		<td>Триглицериды</td>
+		<td></td>
+		<td>0,7-2,1 ммоль/л</td>
+	</tr>
+	<tr>
+		<th>11</th>
+		<td>Холестерин общий</td>
+		<td></td>
+		<td>3,0-5,0 ммоль/л</td>
+	</tr>
+	<tr>
+		<th>12</th>
+		<td>Альфа-амилаза</td>
+		<td></td>
+		<td> До 220 U/l</td>
+	</tr>
+	<tr>
+		<th>13</th>
+		<td>Альфа-амилаза свободная моча</td>
+		<td></td>
+		<td> До 1000 U/l </td>
+	</tr>
+	<tr>
+		<th>14</th>
+		<td>Альфа-амилаза в моче за сутки</td>
+		<td></td>
+		<td> До 900 U/l </td>
+	</tr>
+	<tr>
+		<th>15</th>
+		<td>Мочевая кислота</td>
+		<td></td>
+		<td>2,5-7,7 мг/дл</td>
+	</tr>
+	<tr>
+		<th>16</th>
+		<td>Кальций</td>
+		<td></td>
+		<td>2,0-2,66 ммоль/л</td>
+	</tr>
+	<tr>
+		<th>17</th>
+		<td>Щелочная фосфатаза</td>
+		<td></td></tr><tr></tr>
+		<tr><td>3,5-6,3 ммоль/л</td>
+	</tr>
+	<tr>
+		<th>18</th>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</tbody></table><span class="footer_date">Дата: <span class="value">15/09/2020</span></span><span class="footer_doctor_name">Врач-лаборант: <span class="value"></span></span>
