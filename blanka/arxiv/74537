@@ -1,0 +1,34 @@
+<h2 class="blank_name">Анализ мочи по Нечипоренко</h2>
+<table>
+	<tbody><tr>
+		<th>№</th>
+		<th col="name">Наименование</th>
+		<th col="value">Результаты</th>	
+		<th>В норме</th>
+	</tr>
+	<tr>
+		<th>1</th>
+		<th>Лейкоциты 1 ml мочи</th>
+		<td>res</td>
+		<td>4000</td>
+	</tr>
+	<tr>
+		<th>2</th>
+		<th>Эритроциты  1 ml мочи</th>
+		<td></td>
+		<td>1000</td>
+	</tr>
+	<tr>
+		<th>3</th>
+		<th>Цилиндры  1 ml мочи</th>
+		<td></td>
+		<td>250</td>
+	</tr>
+	<tr>
+		<th>4</th>
+		<th>Другие  1 ml мочи</th>
+		<td>res5</td>
+		<td>-</td>
+	</tr>
+</tbody></table>		               
+<span class="footer_date">Дата: <span class="value"></span></span><span class="footer_doctor_name">Врач-лаборант: <span class="value"></span></span>

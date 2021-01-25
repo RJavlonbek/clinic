@@ -1,0 +1,82 @@
+/*       NODIR    */
+
+@media print{
+	body{
+		margin: 20px;
+		position: relative;
+	}
+
+	table{
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	table th{
+		border: 1.1px solid black;
+	}
+
+	table td{
+		border: 0.9px solid grey;
+	}
+
+	.blank_address{
+	width: 33%;
+	float: left;
+	text-align: center;
+	}
+
+	.blank_icon{
+		text-align: center;
+		width: 33%;
+		float: left;
+	}
+
+	.blank_icon img{
+		width:150px;
+		height: 100px;
+
+	}
+
+	.blank_doc{
+		text-align: center;
+		width: 33%;
+		float: left;
+	}
+
+	.blank_customer_details{
+		clear: left;
+		padding-left: 150px;
+		font-style: italic;
+		font-weight: bold;
+		letter-spacing: 2px;
+		font-family: 'Times New Roman';
+		font-size: 1.2em;
+	}
+
+	.blank_name{
+		text-align: center;
+		clear: left;
+		font-style: italic;
+		color: blue;
+	}
+
+	.blank_analizator{
+		text-align: center;
+		font-style: italic;
+		font-size: 1.3em;
+	}
+
+	.footer_date, .footer_doctor_name{
+		position: absolute;
+		bottom: 20px;
+		font-size: 1.5em;
+	}
+
+	.footer_date{
+		left: 50px;
+	}
+
+	.footer_doctor_name{
+		right: 50px;
+	}
+}

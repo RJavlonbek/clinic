@@ -1,0 +1,633 @@
+body{
+	background: #daebfb url('images/login-page-blur.jpg') no-repeat;
+	background-attachment: fixed;
+	background-position: left bottom;
+
+    margin:0 auto;
+	font-family: "Roboto", sans-serif !important;
+}
+.ui-widget{
+	font-family: "Roboto", sans-serif !important;
+}
+.ui-dialog .ui-dialog-content{
+	background: #fff;
+}
+.btn-loading{
+	pointer-events: none;
+	opacity: 0.5;
+}
+.print-button-box{
+	text-align: right;
+	margin-top: 10px;
+}
+.clickable{
+	color:#0052cc;
+}
+.mb-2{
+	margin-bottom:0.5rem;
+}
+.float-right{
+	float:right;
+}
+.d-flex{
+	display: flex;
+}
+.d-inline-flex{
+	display: inline-flex;
+}
+.ml-auto{
+	margin-left: auto;
+}
+.text-success {
+    color: #28a745!important;
+}
+.text-danger {
+    color: #dc3545!important;
+}
+.float-left{
+	float: left;
+}
+
+
+/-----------------* 
+login page
+----------------*/
+.login_full{
+	position: relative;
+	width: 100%;
+}
+.login_background{
+	width: 100%;
+}
+.login_main{
+	position: absolute;
+	right: 75px;
+	top:100px;
+
+}
+.top_text{
+	height: 30px;
+	font-size: 1.2em;
+	width: 50%;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#646c73+0,646c73+49,ffffff+51,ffffff+100 */
+	background: rgb(100,108,115); /* Old browsers */
+	background: -moz-linear-gradient(left, rgba(100,108,115,1) 0%, rgba(100,108,115,1) 49%, rgba(255,255,255,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, rgba(100,108,115,1) 0%,rgba(100,108,115,1) 49%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, rgba(100,108,115,1) 0%,rgba(100,108,115,1) 49%,rgba(255,255,255,1) 51%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#646c73', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+	padding: 0.1em;
+	padding-top: 0.3em;
+	color: white;
+	border-radius:3em;
+	font-weight: bold;
+	display: block;
+}
+.login{
+	border:0px solid black;
+	background-color: #e6f1fc;
+	background: rgba(230,241,252,0.75);
+	padding: 35px;
+	margin-top: 20px;
+	box-shadow: 0px 0px 35px #cad1d6 inset;
+	font-size: 1.5em;
+}
+.text_form_for_login{
+	color:#606060;
+	margin-top: 15px;
+}
+.login label{
+	margin-top: 10px;
+}
+input[type="text"].text_input_for_login, input[type="password"].text_input_for_login  {
+	display: block;
+	background: rgba(100,108,115,0);
+	border:0px;
+	color:#606060;
+	font-size: 1em;
+	border-bottom: 2px solid #767779;
+}
+.login_submit{
+	background-color: #007ef3;
+	border:0px;
+	padding: 8px;
+	margin-top: 12px;
+	border-radius:3em;
+	color:white;
+	font-weight: bold;
+	font-size: 0.7em;
+	padding-left: 5em;
+	padding-right: 5em;
+}
+
+
+/*    ADMIN PAGE    */
+.toolbar{
+	margin-bottom: 10px;
+	text-align: right;
+}
+.toolbar input{
+	padding: 5px 0;
+}
+i.fa-close{
+	color: red;
+}
+i.fa{
+	cursor: pointer;
+	margin-left: 5px;
+}
+table{
+	border-spacing: 5px;
+	width: 100%;
+	border: 1px solid grey;
+	border-collapse: collapse;
+}
+table th{
+	/*width: 20%;*/
+	padding: 2px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	border-right: 1px solid grey;
+}
+table.table_customers th{
+	width: 0;
+}
+table tr{
+	padding: 8px;
+}
+table td{
+	text-align: left;
+	font-size: 0.9em;
+	border-right: 1px solid grey;
+	padding-left: 3px;
+}
+.add_item_button{
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 6px;
+	color: green;
+}
+#report_tabs{
+	margin-top: 20px;
+}
+/* dialogs  */
+div.ui-dialog{
+	z-index:100;
+}
+.dialog_form label{
+	display: block;
+	margin: 15px;
+	margin-top: 30px;
+}
+.dialog_form input,#add_analize_form .ui-selectmenu-button, #add_district_form #district_regions-button, .dialog_form .ui-selectmenu-button{
+	padding: 5px;
+	width: 60%;
+	border-radius: 5px;
+	float: right;
+}
+label[for="quantity"] .ui-spinner{
+	padding: 0px;
+	float: right;
+}
+.dialog_form label[for="quantity"] .ui-spinner input{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	width: 80%;
+}
+.ui-selectmenu-menu{
+	z-index: 1000;
+}
+.region_name, .analize_type_name{
+	color: blue;
+}
+.custom_time span{
+	margin-left: 20px;
+}
+.custom_time select{
+	color:#2e6e9e;
+}
+#report_tabs #report_tabs-1 tr.organization{
+	cursor: pointer;
+}
+#organization_report_details table th{
+	width: 0;
+}
+.report_details table{
+	margin-bottom: 30px;
+}
+.org_bonus_percent{
+	color: red;
+	float: right;
+}
+.org_report_details_analize_price{
+	color: red;
+}
+
+
+/*    REGISTRATOR   */
+.registrator_main{
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+	height: 100%;
+	background: rgb(255,255,255,0.7);
+}
+.registrator_main .registrator_top_text, .administrator_top_text, .doctor_top_text{
+	text-align: center;
+	background-color: #2879ac;
+	opacity: 1;
+	color:#ffffff;
+	padding: 0.5em;
+	border-radius: 0.2em;
+	font-size: 2em;
+	border:1px solid #515151;
+	box-shadow: 3px 1px 2px #000000;
+}
+.current_date{
+	float: left;
+}
+.registrator_search_button,.registrator_settings_button,.administrator_settings_button, .registrator_analize_results_button{
+	border-radius: 5px;
+	font-size: 0.7em;
+	padding: 0.3em 0.8em;
+	float: right;
+}
+#customer_names{
+	display: none;
+}
+#registrator_change_password_form .error,#administrator_change_password_form .error{
+	padding: 2px;
+	text-align: right;
+	padding-right: 30px;
+	color: red;
+}
+.registrator_main #controlgroup{
+	width: 100%;
+}
+#registrator_top{
+	background-color: #e7e4f9;
+	opacity: 1;
+	color:#141414;
+	padding: 0.4em;
+	border-radius: 0.2em;
+	font-size: 1.2em;
+	border:1px solid #515151;
+	box-shadow: 3px 1px 2px #000000;
+}
+.get-result-method{
+	text-align: right;
+	margin-bottom: 20px;
+}
+#analizes_list {
+  	display: flex;
+ 	width: 100%;
+ }
+#registrator_top .name_and_dob{
+	width: 100%;
+	display: flex;
+	margin:20px;
+	margin-left: 0px;
+}
+#registrator_top label[for='name']{
+	width: 50%;
+}
+#registrator_top label[for='name'] input{
+	width: 70%;
+	font-size: 1em;
+}
+#registrator_top input{
+	font-size: 1em;
+}
+.text_form{
+	font-size: 1em;
+}
+#registrator_top label[for='d_o_b']{
+	width:40%;
+}
+input[type="text"].text_input_for_registration, input[type="password"].text_input_for_registration  {
+	background: rgba(100,108,115,0);
+	border:0px;
+	color:#323232;
+	border-bottom: 1px solid #313131;
+}
+.text_input_for_datapicker{
+	background: rgba(100,108,115,0);
+	border:0px;
+	color:#323232;
+	border-bottom: 1px solid #313131;
+	width: 7em;
+}
+.address_form{
+	display: flex;
+}
+#organization{
+	width:40em;
+	font-size: 1.1em;
+}
+/*   SELECTBOX    */
+#analizes-button{
+	width: 93%;
+}
+.multiselect{
+	background-color: #e7e4f9;
+	opacity: 1;
+	color:#141414;
+	padding: 0.4em;
+	border-radius: 0.2em;
+	font-size: 1.2em;
+	border:1px solid #515151;
+	box-shadow: 3px 1px 2px #000000;
+	width: 49.5%;
+	margin-right: 0.5%;
+	max-height: 530px;
+	overflow: scroll;
+	box-sizing: border-box;
+}
+#analizes_list .selectBox {
+  position: relative;
+  width: 96%;
+  padding: 6px;
+  font-size: 1em;
+}
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+#checkboxes label {
+	width: 93%;
+	font-size: 1em;
+    display: block;
+    text-align: left;
+}
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+/*    end selectbox  */
+.analize_price{
+	width: 80px;
+	color: #333333;
+	font-style: italic;
+	float: right;
+	text-align: right;
+}
+/*   chosen analizes   */
+.prices_form{
+	width: 50%;
+	background-color: #e7e4f9;
+	opacity: 1;
+	color:#141414;
+	padding: 0.4em;
+	padding-bottom: 60px;
+	border-radius: 0.2em;
+	font-size: 1.2em;
+	border:1px solid #515151;
+	box-shadow: 3px 1px 2px #000000;
+	box-sizing: border-box;
+	position: relative;
+}
+.registrator2-services-list .prices_form{
+	width: 100%;
+	margin-top: 1rem;
+}
+.chosen_analizes{
+}
+.chosen_analize{
+	display: block;
+	margin-top: 10px;
+	color:#000000;
+	font-size: 1em;
+}
+input.discount_spinner{
+	font-size: 0.7em;
+	width:30px;
+	padding: 2px;
+	color: red;
+}
+.total_price_form{
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	color:#1679be;
+	font-weight: bold;
+	font-size: 1em;
+}
+.registrator_bottom,.time_for_registrator, .registrator2_bottom{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+.time_for_registrator{
+	display: none;
+}
+div.content-for-print{
+	display: none;
+}
+.chosen_analize span.ui-spinner{
+	float: right;
+}
+#customer_report_details td.blank_result{
+	cursor: pointer;
+}
+.registrator2-services-list .after-service-type{
+	padding: 1rem 0;
+}
+
+
+/*   */
+/* print style */
+@media print {
+	body{
+		background: #fff;
+		margin:1cm;
+	}
+/*	#registrator_top{
+		font-size: 1em;
+	}
+	.current_date{
+		display: none;
+	}
+	.ui-selectmenu-icon.ui-icon, div.multiselect,.print_button,.save_button, .address_form #organization{
+		display: none;
+	}
+	.time_for_registrator{
+		display: block;
+		right: 20px;
+	}
+	div.prices_form{
+		width: 100%;
+		height: 850px;
+	}
+	div.name_and_dob,div.address_form{
+	}*/
+	.registrator_main{
+		display: none;
+	}
+	div.content-for-print{
+		width: 74mm;
+		padding: 0mm;
+		font-weight: bold;
+		display: block;
+	}
+	div.content-for-print .top{
+		padding: 10mm 0;
+		page-break-after: always;
+		min-height: 8cm;
+	}
+	div.content-for-print p{
+		margin:0px;
+	}
+	div.content-for-print .surname, div.content-for-print .name{
+		font-size: 16px;
+	}
+	.content-for-print .top table{
+		border:0px;
+		font-weight: normal;
+		border-collapse: collapse;
+		margin-bottom: 10mm;
+		margin-top: 10mm;
+	}
+	.content-for-print .top table td{
+		font-size: 10px;
+		border: 0px;
+	}
+	.content-for-print .top table td.field{
+		width: 33.33%;
+		border-bottom: 0.1mm dashed grey;
+	}
+	.content-for-print .top table td.total{
+		padding-top: 10mm;
+		padding-left: 10mm;
+		font-weight: bold;
+		font-size: 13px;
+	}
+	.content-for-print .top tr span.ui-spinner{
+		display: none;
+	}
+	div.content-for-print .bottom{
+		border-top: 1px dashed grey;
+		border-bottom: 1px dashed grey;
+		padding-top: 7px;
+		padding-bottom: 7px;
+	}
+	div.content-for-print .bottom .sub_analizes{
+		font-size: 11px;
+		font-weight: normal;
+	}
+	.ui-dialog-content{
+		background: #fff;
+		border:0;
+	}
+	.blank_result_dialog table th, #blank_dialog table th{
+		padding: 0 3px;
+		font-weight: 500;
+		font-size: 14px;
+		text-align: left;
+	}
+	.blank_result_dialog table td{
+		font-size: 13px;
+	}
+	#Header, #Footer { display: none !important; }
+	@page{
+		margin: 0;
+	}
+}
+/*   DOCTOR   */
+.doctor_main{
+	background-color: white;
+}
+.doctor_main table th{
+	width:0;
+}
+#blank_dialog{
+	background: #fff;
+}
+.doctor_main table td, #blank_dialog table td,.blank_result_dialog table td, #registrator_analize_results_dialog table td{
+	text-align: left;
+	border:1px solid black;
+}
+.doctor_main td.blank, .registrator_analize_results_dialog_body td.blank{
+	cursor: pointer;
+	color: #0052cc;
+}
+.blank_address{
+	width: 33%;
+	float: left;
+	text-align: center;
+}
+.blank_icon{
+	text-align: center;
+	width: 33%;
+	float: left;
+}
+.blank_icon img{
+	width:170px;
+	height: 100px;
+}
+.blank_doc{
+	text-align: center;
+	width: 33%;
+	float: left;
+}
+.blank_customer_details{
+	clear: left;
+	padding-left: 150px;
+	font-style: italic;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-family: 'Times New Roman';
+	font-size: 1.2em;
+}
+.blank_name{
+	text-align: center;
+	clear: left;
+	font-style: italic;
+	color: blue;
+}
+.blank_analizator{
+	text-align: center;
+}
+#blank_dialog table tr,.blank_result_dialog table tr{
+	padding: 0;
+}
+#blank_dialog table th,.blank_result_dialog table th{
+	width: 0;
+}
+#blank_dialog table td input{
+	width: 100%;
+	height: 100%;
+	border:0;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+#blank_dialog .blank_main{
+
+}
+#blank_dialog .blank-result-condition{
+	margin-top: 4rem;
+}
+.footer_date,.footer_doctor_name{
+	margin-top: 20px;
+}
+#blank_dialog .footer_date input,#blank_dialog .footer_doctor_name input{
+	border:0;
+	border-bottom: 1px solid black;
+}
+.footer_date{
+	float:left;
+}
+.footer_doctor_name{
+	float:right;
+}

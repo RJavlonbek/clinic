@@ -1,0 +1,129 @@
+<h2 class="blank_name">Общий анализ крови</h2>
+<table>
+	<tbody><tr>
+		<th>№</th>
+		<th col="name">Наименование</th>
+		<th col="value">Результаты</th>	
+		<th>В норме</th>
+	</tr>
+	<tr>
+		<th>1</th>
+		<th>Гемоглобин</th>
+		<td>res2</td>
+		<td>М 130-160 г/л; Ж 120-140 г/л</td>
+	</tr>
+	<tr>
+		<th>2</th>
+		<th>Эритроциты</th>
+		<td></td>
+		<td>М 4,0-5,0*1012 /л  Ж 3,9-,7*1012 /л</td>
+	</tr>
+	<tr>
+		<th>3</th>
+		<th>Цветной показатель</th>
+		<td></td>
+		<td>0,85-1,05</td>
+	</tr>
+	<tr>
+		<th>4</th>
+		<th>Ретикулоциты</th>
+		<td></td>
+		<td>2 – 10*109 /л</td>
+	</tr>
+	<tr>
+		<th>5</th>
+		<th>Тромбоциты</th>
+		<td></td>
+		<td>180,0-320,0*109 /л</td>
+	</tr>
+	<tr>
+		<th>6</th>
+		<th>Лейкоциты</th>
+		<td></td>
+		<td>4,0-9,0*109 /л</td>
+	</tr>
+	<tr>
+		<th>7</th>
+		<th>ВСК</th>
+		<td></td>
+		<td>3-5 минут</td>
+	</tr>
+	<tr>
+		<th>8</th>
+		<th>Гематокрит</th>
+		<td></td>
+		<td>М 46-50%; Ж 36-42%</td>
+	</tr>
+	<tr>
+		<th>9</th>
+		<th>Бластные клетки</th>
+		<td></td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<th>10</th>
+		<th>Промиелоциты</th>
+		<td></td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<th>11</th>
+		<th>Миелоциты</th>
+		<td></td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<th>12</th>
+		<th>Метамиелоциты</th>
+		<td></td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<th>13</th>
+		<th>Палочкоядерные</th>
+		<td>res4</td>
+		<td>1 – 6 %</td>
+	</tr>
+	<tr>
+		<th>14</th>
+		<th>Сегментоядерные</th>
+		<td></td>
+		<td>5247 - 72 %</td>
+	</tr>
+	<tr>
+		<th>15</th>
+		<th>Эозинофилы</th>
+		<td></td>
+		<td>0,5 - 5 %</td>
+	</tr>
+	<tr>
+		<th>16</th>
+		<th>Базофилы</th>
+		<td></td>
+		<td>0 – 1 %</td>
+	</tr>
+	<tr>
+		<th>17</th>
+		<th>Лимфоциты</th>
+		<td></td>
+		<td>19 – 37 %</td>
+	</tr>
+	<tr>
+		<th>18</th>
+		<th>Моноциты</th>
+		<td></td>
+		<td>3 – 11 %</td>
+	</tr>
+	<tr>
+		<th>19</th>
+		<th>Плазматические клетки</th>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>20</th>
+		<th>СОЭ (скорость оседания эритроцитов)</th>
+		<td></td>
+		<td>М 2-10 мм/час;   Ж 2-15 мм/час</td>
+	</tr>
+</tbody></table><span class="footer_date">Дата: <span class="value"></span></span><span class="footer_doctor_name">Врач-лаборант: <span class="value"></span></span>
