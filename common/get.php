@@ -38,7 +38,7 @@ if(isset($_GET['report_type'])){ ?>
 		<?php if($_GET['report_type']=='custom_time'){ 
 			$organizations=getOrganizations($_GET['report_type'],$_GET['from'],$_GET['till']);
 		}else{
-			$organizations=getORganizations($_GET['report_type']);
+			$organizations=getOrganizations($_GET['report_type']);
 		} ?>
 		<table class="table_report_organizations">
 			<th>Tashkilot</th>
@@ -90,7 +90,7 @@ if(isset($_GET['report_type'])){ ?>
 			<table class="table_report_analizes">
 				<tr>
 					<th>Analiz</th>
-					<th>Summa</th>
+					<th>Narx (hozirgi)</th>
 					<th>Analiz soni</th>
 					<th>Umumiy summa</th>
 				</tr>
@@ -126,7 +126,7 @@ if(isset($_GET['report_type'])){ ?>
 						?>
 						<tr>
 							<th>Jami</th>
-							<th><?=$total_type_price;?></th>
+							<th> - </th>
 							<th><?=$total_type_customers;?></th>
 							<th><?=$total_type_sum;?></th>
 						</tr>
@@ -134,7 +134,7 @@ if(isset($_GET['report_type'])){ ?>
 				} ?>
 				<tr>
 					<th>Umumiy</th>
-					<th><?=$total_price;?></th>
+					<th> - </th>
 					<th><?=$total_customers;?></th>
 					<th><?=$total_sum;?></th>
 				</tr>
