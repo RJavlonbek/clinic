@@ -20,7 +20,7 @@ if(isset($_COOKIE[$login])){
 
 	}elseif($role=='laborant'){
 
-		setcookie($login,$role,time()+7200);
+		setcookie($login,$role,time()+7200, "/");
 		require(SYSBASE."models/doktor.php");
 
 	}

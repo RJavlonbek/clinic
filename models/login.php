@@ -28,8 +28,8 @@
 		
 		if($user){
 			$role=$user['rol'];
-			setcookie($login,$role,time()+7200);
-			setcookie('userid',$user['id'],time()+7200);
+			setcookie($login,$role,time()+7200, "/");
+			setcookie('userid',$user['id'],time()+7200, "/");
 			if($role=='admin'){
 				header("Location:administrator");
 			}elseif($role=='registrator'){

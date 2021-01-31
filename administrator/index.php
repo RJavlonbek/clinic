@@ -16,7 +16,7 @@ if(isset($_COOKIE[$login])){
 
 	}elseif($_COOKIE[$login]=='admin'){
 
-		setcookie($login,'admin',time()+7200);
+		setcookie($login,'admin',time()+7200, "/");
 
 		require(SYSBASE."models/administrator.php");
 

@@ -8,7 +8,7 @@ if(isset($_COOKIE[$login])){
 	if(($_COOKIE[$login])!="registrator2"){
 	  header("Location: /");
 	}elseif($_COOKIE[$login]=='registrator2'){
-		setcookie($login,'registrator2',time()+7200);
+		setcookie($login,'registrator2',time()+7200, "/");
 		require(SYSBASE."models/registrator2.php");
 	}
 }else{
