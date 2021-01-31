@@ -317,7 +317,7 @@ function getOrganizations($time_type='all',$from=0,$till=0, $registrator="all"){
 			$sql = $sql . " AND analiz_buyurtmalar.user_id=$registrator";
 		}
 			
-		$sql = $sql . " ORDER BY analiz_buyurtmalar.sana DESC GROUP BY tashkilotlar.nom";
+		$sql = $sql . "  GROUP BY tashkilotlar.nom ORDER BY analiz_buyurtmalar.sana DESC";
 	}else{
 		$sql="SELECT * FROM tashkilotlar";
 	}
