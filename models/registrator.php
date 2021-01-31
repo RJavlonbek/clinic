@@ -3,7 +3,7 @@
 <div class="registrator_main">
 	<div class="registrator_top_text">
 		<input name="current_date" class="current_date" size="10" value="<?=date('d-m-Y');?>">
-		Registratsiya
+		Registratsiya | Login: <?= $user["login"]; ?>
 		<button class="registrator_search_button search_customer_dialog_link">
 			<i class="fa fa-search"></i>
 		</button>

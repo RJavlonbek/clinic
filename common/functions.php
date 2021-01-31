@@ -13,6 +13,19 @@ function logIn($name,$password){
 	return $activeUser;
 }
 
+function getActiveUser(){
+	if(!isset($_COOKIE["userid"])){
+		return false;
+	}
+	$user_id = $_COOKIE["userid"];
+	$user = $db->query("SELECT * FROM xodimlar WHERE id=$user_id");
+	$user=$user->fetchAll(PDO::FETCH_ASSOC);
+	if(!count($user)){
+		return false;
+	}
+	return $user[0];
+}
+
 
 //     	SAVATCHA 
 function getProducts(){
@@ -25,7 +38,7 @@ function getProducts(){
 
 
 //   MIJOZLAR
-function getCustomers($customer_id=0, $limit=0, $key='', $from=0, $till=0){
+function getCustomers($customer_id=0, $limit=0, $key='', $from=0, $till=0, $registrator="all"){
 	global $db;
 	//$limit=$db->quote($limit);
 	if($customer_id){
@@ -41,10 +54,17 @@ function getCustomers($customer_id=0, $limit=0, $key='', $from=0, $till=0){
 				INNER JOIN analiz_buyurtmalar ON mijozlar.id=analiz_buyurtmalar.mijoz_id
 				JOIN tashkilotlar ON tashkilotlar.id = analiz_buyurtmalar.tashkilot_id
 				WHERE (mijozlar.ism LIKE '%$key%' OR tashkilotlar.nom LIKE '%$key%' OR mijozlar.id LIKE '%$key%') ";
+		
 		if($from && $till){
 			$sql.="AND analiz_buyurtmalar.sana BETWEEN $from AND $till ";
 		}
-		$sql.="GROUP BY analiz_buyurtmalar.mijoz_id ORDER BY analiz_buyurtmalar.sana DESC ";
+
+		if($registrator && $registrator != "all"){
+			$sql = $sql . " AND analiz_buyurtmalar.user_id=$registrator";
+		}
+
+		$sql.=" GROUP BY analiz_buyurtmalar.mijoz_id ORDER BY analiz_buyurtmalar.sana DESC ";
+		
 		if($limit){
 			$sql.="LIMIT $limit ";
 		}
@@ -104,12 +124,10 @@ function getAnalizeTypes(){
 	$data=$query->fetchAll(PDO::FETCH_ASSOC);
 	return $data;
 } 
-function getAnalizes($time='all',$from=0,$till=0,$key='',$type_id=0){
+function getAnalizes($time='all',$from=0,$till=0,$key='',$type_id=0, $registrator = 'all'){
 	global $db;
 	$t=0;
-	if($t){
-		$sql="SELECT *,COUNT(DISTINCT analiz_buyurtmalar.mijoz_id) AS num_customers,SUM(analiz_buyurtmalar.analiz_narx) AS sum_price FROM analizlar JOIN analiz_buyurtmalar ON analizlar.id=analiz_buyurtmalar.analiz_id WHERE analiz_buyurtmalar.sana>$t GROUP BY analizlar.nom ORDER BY analiz_buyurtmalar.sana";
-	}elseif($time=='custom_time'){
+	if($time=='custom_time'){
 		$sql="SELECT *,COUNT(DISTINCT analiz_buyurtmalar.mijoz_id) AS num_customers,SUM(analiz_buyurtmalar.analiz_narx) AS sum_price 
 		FROM analizlar JOIN analiz_buyurtmalar ON analizlar.id=analiz_buyurtmalar.analiz_id 
 		WHERE analiz_buyurtmalar.sana BETWEEN $from AND $till 
@@ -120,9 +138,13 @@ function getAnalizes($time='all',$from=0,$till=0,$key='',$type_id=0){
 			$sql="SELECT *, analizlar.nom as nom, COUNT(DISTINCT analiz_buyurtmalar.mijoz_id) AS num_customers,SUM(analiz_buyurtmalar.analiz_narx) AS sum_price 
 				FROM analizlar JOIN analiz_buyurtmalar ON analizlar.id=analiz_buyurtmalar.analiz_id 
 				JOIN tashkilotlar ON tashkilotlar.id = analiz_buyurtmalar.tashkilot_id
-				WHERE (analizlar.tur_id=$type_id) AND (analiz_buyurtmalar.sana BETWEEN $from AND $till) 
-				GROUP BY analizlar.nom 
-				ORDER BY analiz_buyurtmalar.sana";
+				WHERE (analizlar.tur_id=$type_id) AND (analiz_buyurtmalar.sana BETWEEN $from AND $till)";
+
+			if($registrator && $registrator != "all"){
+				$sql = $sql . " AND analiz_buyurtmalar.user_id=$registrator";
+			}
+
+			$sql = $sql . " GROUP BY analizlar.nom ORDER BY analiz_buyurtmalar.sana";
 		}
 	}else{
 		$sql="SELECT * FROM analizlar WHERE nom LIKE '%$key%'";
@@ -246,6 +268,15 @@ function getLaborants(){
 	$data=$query->fetchAll(PDO::FETCH_ASSOC);
 	return $data;
 }
+
+function getRegistrators(){
+	global $db;
+	$sql="SELECT * FROM xodimlar WHERE rol='registrator'";
+	$query=$db->query($sql);
+	$data=$query->fetchAll(PDO::FETCH_ASSOC);
+	return $data;
+}
+
 function getDoctors($service_type=''){
 	global $db;
 	$sql="SELECT * FROM xodimlar WHERE rol='doktor'";
@@ -262,7 +293,7 @@ function getDoctors($service_type=''){
 
 
  //  TASHKILOTLAR
-function getOrganizations($time_type='all',$from=0,$till=0){
+function getOrganizations($time_type='all',$from=0,$till=0, $registrator="all"){
 	global $db;
 	$t=0;
 	if($time_type=='day'){
@@ -279,7 +310,13 @@ function getOrganizations($time_type='all',$from=0,$till=0){
 			LEFT JOIN (
 				analiz_buyurtmalar JOIN mijozlar ON mijozlar.id=analiz_buyurtmalar.mijoz_id
 			) ON tashkilotlar.id=analiz_buyurtmalar.tashkilot_id 
-			WHERE analiz_buyurtmalar.sana BETWEEN $from AND $till GROUP BY tashkilotlar.nom ORDER BY analiz_buyurtmalar.sana DESC";
+			WHERE (analiz_buyurtmalar.sana BETWEEN $from AND $till)";
+			
+		if($registrator && $registrator != "all"){
+			$sql = $sql . " AND analiz_buyurtmalar.user_id=$registrator";
+		}
+			
+		$sql = $sql . " ORDER BY analiz_buyurtmalar.sana DESC GROUP BY tashkilotlar.nom";
 	}else{
 		$sql="SELECT * FROM tashkilotlar";
 	}

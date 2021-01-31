@@ -36,7 +36,7 @@ if(isset($_GET['report_type'])){ ?>
 	</ul>
 	<div id="report_tabs-1">
 		<?php if($_GET['report_type']=='custom_time'){ 
-			$organizations=getOrganizations($_GET['report_type'],$_GET['from'],$_GET['till']);
+			$organizations=getOrganizations($_GET['report_type'],$_GET['from'],$_GET['till'], $_GET['registrator']);
 		}else{
 			$organizations=getOrganizations($_GET['report_type']);
 		} ?>
@@ -103,7 +103,7 @@ if(isset($_GET['report_type'])){ ?>
 					$total_type_price=0;
 					$total_type_customers=0;
 					$total_type_sum=0;
-					$analizes=getAnalizes($_GET['report_type'],$_GET['from'],$_GET['till'],'',$type['id']); 
+					$analizes=getAnalizes($_GET['report_type'],$_GET['from'],$_GET['till'],'',$type['id'], $_GET['registrator']); 
 					if(count($analizes)>0){ ?>
 						<tr>
 							<th colspan="4"><?=$type['nom'];?></th>
@@ -148,7 +148,7 @@ if(isset($_GET['report_type'])){ ?>
 		<?php } ?>
 	</div>
 	<div id="report_tabs-3">
-		<?php $customers=getCustomers(null, null, null, $_GET['from'], $_GET['till']);?>
+		<?php $customers=getCustomers(null, null, null, $_GET['from'], $_GET['till'], $_GET['registrator']);?>
 		<table class="table_customers">
 			<th class="id_column">Id</th>
 			<th>Ismi</th>
@@ -811,7 +811,8 @@ if(isset($_GET['tab_item'])){
 				</label>
 			</form>
 		</div>
-	<?php }elseif($tab_item=='report'){ ?>
+	<?php }elseif($tab_item=='report'){ 
+		$registrators = getRegistrators(); ?>
 		<div class="report-top-bar d-flex">
 			<div class="custom_time">
 				<span id="from_time">
@@ -861,8 +862,17 @@ if(isset($_GET['tab_item'])){
 					</select>
 					gacha
 				</span>
-				<button id="show-report-button">Ko'rsatish</button>
 			</div>
+			<div class="user-filter">
+				<span class="filter-title">Registrator: </span>
+				<select id="registrator">
+					<option registrator_id="">Barchasi</option>
+					<?php foreach($registrators as $registrator){ ?>
+						<option registrator_id="<?=$registrator['id'];?>"><?=$registrator["ism"];?></option>
+					<?php } ?>
+				</select>
+			</div>
+			<button id="show-report-button">Ko'rsatish</button>
 		</div>
 		<div id="report_tabs">
 

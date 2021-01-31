@@ -1,6 +1,10 @@
 <?php 
 require("../common/define.php");
 //global $db;
+
+$user = getActiveUser();
+$user_id = $db->quote($user["id"]);
+
 if(isset($_POST['item'])){
 	if($_POST['item']=='product'){
 		$name=$db->quote($_POST['name']);
@@ -105,6 +109,7 @@ if(isset($_POST['item'])){
 					$analize_id=$db->quote($_POST['orders'][$i][0]);
 					$analize_price=$db->quote($_POST['orders'][$i][1]);
 					$sql="INSERT INTO `analiz_buyurtmalar` (
+						user_id,
 						mijoz_id,
 						analiz_id, 
 						tashkilot_id, 
@@ -114,7 +119,7 @@ if(isset($_POST['item'])){
 						ozgargan_vaqt,
 						tolandi,
 						get_result_method
-					) VALUES (".$customer_id.", $analize_id, $org_id, $analize_price, $time, 0, 0, 0, $get_result_method)";
+					) VALUES ($user_id, ".$customer_id.", $analize_id, $org_id, $analize_price, $time, 0, 0, 0, $get_result_method)";
 					$db->query($sql);
 				}
 				echo 'saved';

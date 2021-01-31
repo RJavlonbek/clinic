@@ -892,6 +892,7 @@ function getTabItem(tab_item='',options={}){
 				});
 				$('.custom_time #show-report-button').on('click',function(){
 					var th=$(this);
+					var registrator = $('.user-filter #registrator option:selected').attr("registrator_id").trim();
 					th.addClass('btn-loading');
 					$('#report_tabs').remove();
 					var report_type='custom_time';
@@ -903,7 +904,8 @@ function getTabItem(tab_item='',options={}){
 						var data={
 							report_type:report_type,
 							from:from,
-							till:till
+							till:till,
+							registrator
 						}
 					}else{
 						var data={
