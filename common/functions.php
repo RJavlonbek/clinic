@@ -14,6 +14,7 @@ function logIn($name,$password){
 }
 
 function getActiveUser(){
+	global $db;
 	if(!isset($_COOKIE["userid"])){
 		return false;
 	}
