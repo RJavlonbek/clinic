@@ -81,9 +81,14 @@ if(isset($_POST['item'])){
 		if(isset($_POST['old_password'])){
 			if(isset($_POST['role'])){
 				$role=$db->quote($_POST['role']);
+				$id = $db->quote($_POST['id']);
 				$old_password=$db->quote($_POST['old_password']);
 				$new_password=$db->quote($_POST['new_password']);
+
 				$sql="SELECT parol FROM xodimlar WHERE rol=$role";
+				if($id) {
+					$sql = $sql . " AND id=$id";
+				}
 				$password=$db->query($sql);
 				$password=$password->fetchAll(PDO::FETCH_ASSOC);
 				$status=0;
@@ -94,6 +99,9 @@ if(isset($_POST['item'])){
 				}
 				if($status){
 					$sql="UPDATE xodimlar SET parol=$new_password WHERE rol=$role";
+					if($id) {
+						$sql = $sql . " AND id=$id";
+					}
 					$result=$db->query($sql);
 				}
 				echo $status;

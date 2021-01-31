@@ -596,6 +596,7 @@ $(function(){
 					data={
 						item:'staff',
 						role:'registrator',
+						id: $('#registrator_change_password_form input[name="user_id"]').val(),
 						old_password:$('#registrator_change_password_form #registrator_old_password').val(),
 						new_password:$('#registrator_change_password_form #registrator_new_password').val()
 					}

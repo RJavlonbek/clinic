@@ -32,6 +32,7 @@
 
 	<div id="registrator_settings_dialog" title="Parolni o'zgartirish">
 		<form id="registrator_change_password_form" class="dialog_form">
+			<input type="hidden" name="user_id" value="<?=$user['id'];?>" />
 			<label for="registrator_old_password">
 				Eski parol: <input type="password" id="registrator_old_password" />
 			</label>
