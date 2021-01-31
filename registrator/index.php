@@ -4,7 +4,7 @@ require("../common/define.php");
 
 $user = getActiveUser();
 
-if(($user['rol'] != "registrator"){
+if($user['rol'] != "registrator"){
 	header("Location: /");
 } else {
 	setcookie($user['login'], 'registrator', time()+7200);
