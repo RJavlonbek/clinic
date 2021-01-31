@@ -202,10 +202,10 @@ label[for="quantity"] .ui-spinner{
 .region_name, .analize_type_name{
 	color: blue;
 }
-.custom_time span{
+.custom_time span, .report-top-bar .user-filter, .report-top-bar #show-report-button {
 	margin-left: 20px;
 }
-.custom_time select{
+.report-top-bar select{
 	color:#2e6e9e;
 }
 #report_tabs #report_tabs-1 tr.organization{

@@ -890,7 +890,7 @@ function getTabItem(tab_item='',options={}){
 						dayOfMonth(tab_id + ' #'+$(this).parent().attr('id'), $(this).siblings().filter('.custom_day').val());
 					}
 				});
-				$('.custom_time #show-report-button').on('click',function(){
+				$('.report-top-bar #show-report-button').on('click',function(){
 					var th=$(this);
 					var registrator = $('.user-filter #registrator option:selected').attr("registrator_id").trim();
 					th.addClass('btn-loading');
