@@ -3,7 +3,8 @@ require("../common/define.php");
 //global $db;
 
 $user = getActiveUser();
-$user_id = $db->quote($user["id"]);
+$user_id = isset($_POST["user_id"]) ? $_POST["user_id"]: $user["id"];
+$user_id = $db->quote($user_id);
 
 if(isset($_POST['item'])){
 	if($_POST['item']=='product'){

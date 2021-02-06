@@ -113,6 +113,7 @@ $(function(){
 	});
 
 	$('.registrator_bottom .save_button').on('click',function(){
+		var user_id = $('input[name="user_id"]').val();
 		var customer_name=$('.name_and_dob #customer_name').val();
 		var customer_dob=$('.name_and_dob label[for="d_o_b"] input').val();
 		var customer_region=$('.address_form select[name="region"] option:selected').attr('region_id');
@@ -131,7 +132,8 @@ $(function(){
 		}
 	    var data={
 	    	item:'customer',
-	    	id:customer_id,
+			id:customer_id,
+			user_id,
 	    	name:customer_name,
 	    	dob:customer_dob,
 	    	region:customer_region,
