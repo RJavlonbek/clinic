@@ -265,31 +265,29 @@ if(isset($_GET['report_details'])){
 			<?php 
 			$total_price=0;
 			$total_bonus=0;
-			foreach($customers as $customer){ 
-				foreach($customer['buyurtmalar'] as $order){ 
-					$total_price+=$order['analiz_narx'];
-					$total_bonus+=$order['analiz_narx']/100*$bonus; ?>
-					<tr>
-						<td class="org_report_details_analize_time">
-							<?=date('j F G:i',$order['sana']);?>
-						</td>
-						<td><?=$customer['mijoz_id'];?></td>
-						<td><?=$customer['ism'];?></td>
-						<td class="org_report_details_analize_name">
-							<?=$order['nom'];?>
-							<?php if($order['result_condition']){
-								if($order['result_condition']=='good'){ ?>
-									<span class="text-success"> (Ijobiy)</span>
-								<?php }else{ ?>
-									<span class="text-danger"> (Salbiy)</span>
-								<?php }
-							} ?>
-						</td>
-						<td class="org_report_details_analize_price"><?=$order['analiz_narx'];?></td>
-						<td><?=$order['analiz_narx']/100*$bonus;?></td>	
-					</tr>
-				<?php } 
-			} ?>
+			foreach($orders as $order){ 
+				$total_price+=$order['analiz_narx'];
+				$total_bonus+=$order['analiz_narx']/100*$bonus; ?>
+				<tr>
+					<td class="org_report_details_analize_time">
+						<?=date('j F G:i',$order['sana']);?>
+					</td>
+					<td><?=$order['mijoz_id'];?></td>
+					<td><?=$order['ism'];?></td>
+					<td class="org_report_details_analize_name">
+						<?=$order['nom'];?>
+						<?php if($order['result_condition']){
+							if($order['result_condition']=='good'){ ?>
+								<span class="text-success"> (Ijobiy)</span>
+							<?php }else{ ?>
+								<span class="text-danger"> (Salbiy)</span>
+							<?php }
+						} ?>
+					</td>
+					<td class="org_report_details_analize_price"><?=$order['analiz_narx'];?></td>
+					<td><?=$order['analiz_narx']/100*$bonus;?></td>	
+				</tr>
+			<?php } ?>
 			<tr>
 				<th colspan="4">Jami</th>
 				<th><?=$total_price;?></th>

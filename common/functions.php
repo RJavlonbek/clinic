@@ -105,15 +105,29 @@ function getCustomersByOrg($org_id,$from=0,$till=0){
 		WHERE analiz_buyurtmalar.tashkilot_id=$org_id 
 		AND (analiz_buyurtmalar.sana BETWEEN $from AND $till) 
 		GROUP BY mijozlar.id";
+
+	$sql = "SELECT *, mijozlar.ism, analizlar.nom
+		FROM analiz_buyurtmalar
+		JOIN mijozlar ON mijozlar.id = analiz_buyurtmalar.mijoz_id
+		JOIN analizlar ON analizlar.id = analiz_buyurtmalar.analiz_id
+		WHERE analiz_buyurtmalar.tashkilot_id=$org_id 
+		AND (analiz_buyurtmalar.sana BETWEEN $from AND $till)";
+
 	$query=$db->query($sql);
 	$data=$query->fetchAll(PDO::FETCH_ASSOC);
-	for($i=0;$i<count($data);$i++){
-		$customer_id=$data[$i]['mijoz_id'];
-		$sql="SELECT *,analizlar.nom FROM analiz_buyurtmalar JOIN analizlar ON analiz_buyurtmalar.analiz_id=analizlar.id WHERE mijoz_id=$customer_id AND (sana BETWEEN $from AND $till)";
-		$orders=$db->query($sql);
-		$orders=$orders->fetchAll(PDO::FETCH_ASSOC);
-		$data[$i]+=array('buyurtmalar'=>$orders);
-	}
+
+	// for($i=0; $i < count($data); $i++){
+	// 	$customer_id=$data[$i]['mijoz_id'];
+	// 	$sql="SELECT *, analizlar.nom 
+	// 		FROM analiz_buyurtmalar 
+	// 		JOIN analizlar ON analiz_buyurtmalar.analiz_id = analizlar.id 
+	// 		WHERE mijoz_id = $customer_id AND (sana BETWEEN $from AND $till) AND analiz_buyurtmalar";
+	// 	$orders=$db->query($sql);
+	// 	$orders=$orders->fetchAll(PDO::FETCH_ASSOC);
+
+	// 	$data[$i]+=array('buyurtmalar'=>$orders);
+	// }
+
 	return $data;
 }
 
@@ -306,11 +320,11 @@ function getOrganizations($time_type='all',$from=0,$till=0, $registrator="all"){
 	if($t){
 		$sql="SELECT *,SUM(analiz_buyurtmalar.analiz_narx) AS sum_price,COUNT(DISTINCT mijozlar.id) AS num_customers,COUNT(analiz_buyurtmalar.id) AS num_analizes FROM tashkilotlar LEFT JOIN (analiz_buyurtmalar JOIN mijozlar ON mijozlar.id=analiz_buyurtmalar.mijoz_id) ON tashkilotlar.id=mijozlar.tashkilot_id WHERE analiz_buyurtmalar.sana>$t GROUP BY tashkilotlar.nom ORDER BY analiz_buyurtmalar.sana DESC";
 	}elseif($time_type=='custom_time'){
-		$sql="SELECT *,SUM(analiz_buyurtmalar.analiz_narx) AS sum_price,COUNT(DISTINCT mijozlar.id) AS num_customers,COUNT(analiz_buyurtmalar.id) AS num_analizes 
+		$sql="SELECT *, SUM(analiz_buyurtmalar.analiz_narx) AS sum_price, COUNT(DISTINCT mijozlar.id) AS num_customers, COUNT(analiz_buyurtmalar.id) AS num_analizes 
 			FROM tashkilotlar 
 			LEFT JOIN (
-				analiz_buyurtmalar JOIN mijozlar ON mijozlar.id=analiz_buyurtmalar.mijoz_id
-			) ON tashkilotlar.id=analiz_buyurtmalar.tashkilot_id 
+				analiz_buyurtmalar JOIN mijozlar ON mijozlar.id = analiz_buyurtmalar.mijoz_id
+			) ON tashkilotlar.id = analiz_buyurtmalar.tashkilot_id 
 			WHERE (analiz_buyurtmalar.sana BETWEEN $from AND $till)";
 			
 		if($registrator && $registrator != "all"){
@@ -318,7 +332,7 @@ function getOrganizations($time_type='all',$from=0,$till=0, $registrator="all"){
 		}
 			
 		$sql = $sql . "  GROUP BY tashkilotlar.nom ORDER BY analiz_buyurtmalar.sana DESC";
-	}else{
+	} else {
 		$sql="SELECT * FROM tashkilotlar";
 	}
 	$query=$db->query($sql);
