@@ -238,7 +238,7 @@ if(isset($_GET['report_type'])){ ?>
 if(isset($_GET['report_details'])){
 	$report_details=$_GET['report_details'];
 	if($report_details=='organization'){
-		$customers=getCustomersByOrg($_GET['id'],$_GET['from'],$_GET['till']);
+		$customerOrders=getCustomersByOrg($_GET['id'],$_GET['from'],$_GET['till']);
 		$bonus=$_GET['org_bonus'];
 		$total=0; ?>
 		<table>
@@ -265,7 +265,7 @@ if(isset($_GET['report_details'])){
 			<?php 
 			$total_price=0;
 			$total_bonus=0;
-			foreach($orders as $order){ 
+			foreach($customerOrders as $order){ 
 				$total_price+=$order['analiz_narx'];
 				$total_bonus+=$order['analiz_narx']/100*$bonus; ?>
 				<tr>

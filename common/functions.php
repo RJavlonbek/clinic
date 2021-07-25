@@ -98,7 +98,7 @@ function getCustomerNames($key='', $limit=0){
 	}
 	return $customer_names;
 }
-function getCustomersByOrg($org_id,$from=0,$till=0){
+function getCustomersByOrg($org_id, $from = 0, $till = 0){
 	global $db;
 	$sql="SELECT * FROM mijozlar 
 		JOIN analiz_buyurtmalar ON mijozlar.id=analiz_buyurtmalar.mijoz_id 
@@ -110,7 +110,7 @@ function getCustomersByOrg($org_id,$from=0,$till=0){
 		FROM analiz_buyurtmalar
 		JOIN mijozlar ON mijozlar.id = analiz_buyurtmalar.mijoz_id
 		JOIN analizlar ON analizlar.id = analiz_buyurtmalar.analiz_id
-		WHERE analiz_buyurtmalar.tashkilot_id=$org_id 
+		WHERE analiz_buyurtmalar.tashkilot_id = $org_id 
 		AND (analiz_buyurtmalar.sana BETWEEN $from AND $till)";
 
 	$query=$db->query($sql);
