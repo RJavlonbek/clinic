@@ -326,14 +326,13 @@ function getOrganizations($time_type='all',$from=0,$till=0, $registrator="all"){
 			LEFT JOIN (
 				analiz_buyurtmalar JOIN mijozlar ON mijozlar.id = analiz_buyurtmalar.mijoz_id
 			) ON tashkilotlar.id = analiz_buyurtmalar.tashkilot_id 
-			WHERE (analiz_buyurtmalar.sana BETWEEN $from AND $till)
-			ORDER BY sum_price DESC";
+			WHERE (analiz_buyurtmalar.sana BETWEEN $from AND $till)";
 			
 		if($registrator && $registrator != "all"){
 			$sql = $sql . " AND analiz_buyurtmalar.user_id=$registrator";
 		}
 			
-		$sql = $sql . "  GROUP BY tashkilotlar.nom ORDER BY analiz_buyurtmalar.sana DESC";
+		$sql = $sql . "  GROUP BY tashkilotlar.nom ORDER BY sum_price DESC";
 	} else {
 		$sql="SELECT * FROM tashkilotlar";
 	}
